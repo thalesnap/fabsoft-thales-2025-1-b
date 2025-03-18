@@ -2,6 +2,7 @@ package br.univille;
 
 import br.univille.entity.Cidade;
 import br.univille.entity.Cliente;
+import br.univille.entity.Pokemon;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,9 +12,13 @@ public class Main {
         joinville.setNome("Joinville");
         joinville.setEstado("Santa Catarina");
 
+        Pokemon charizard = new Pokemon("charizard");
+
         Cliente zezinho = new Cliente("Zezinho");
         zezinho.setNome("Zezinho da silva Sauro");
         zezinho.setCidade(joinville);
+
+        zezinho.getListaPokemon().add(charizard);
 
 
         Cliente mariazinha = new Cliente();

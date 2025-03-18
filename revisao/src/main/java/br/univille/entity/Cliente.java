@@ -8,7 +8,7 @@ public class Cliente {
     private String endereco;
     private long id;
 
-    private ArrayList listaPokemon;
+    private ArrayList listaPokemon = new ArrayList();
 
 
     public ArrayList getListaPokemon() {
