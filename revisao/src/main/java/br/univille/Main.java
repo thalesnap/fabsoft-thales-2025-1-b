@@ -8,5 +8,8 @@ public class Main {
         zezinho.setNome("Zezinho da silva Sauro");
         Cliente mariazinha = new Cliente();
         mariazinha.setNome("Mariazinha");
+
+        System.out.println(zezinho);
+        System.out.println(mariazinha);
     }
 }

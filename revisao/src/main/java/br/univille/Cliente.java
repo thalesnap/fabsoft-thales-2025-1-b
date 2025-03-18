@@ -14,6 +14,13 @@ public class Cliente {
     public Cliente(){
     
     }
+    //metodo
+
+    //sobre escrita de metodo ( meu pai me deu pronto e eu reescrevi)
+    @Override
+    public String toString(){
+        return getNome();
+    }
 
     //método
     public String getNome() {
