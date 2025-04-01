@@ -4,34 +4,26 @@ import java.util.ArrayList;
 
 public class Cliente {
     //variável - atributo
+    private long id;
     private String nome;
     private String endereco;
-    private long id;
+    
+    private ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();
 
-    private ArrayList listaPokemon = new ArrayList();
-
-
-    public ArrayList getListaPokemon() {
+    public ArrayList<Pokemon> getListaPokemon() {
         return listaPokemon;
     }
-    public void setListaPokemon(ArrayList listaPokemon) {
+    public void setListaPokemon(ArrayList<Pokemon> listaPokemon) {
         this.listaPokemon = listaPokemon;
     }
 
-    //isso é a seta de associação no diagrama
     private Cidade cidade;
-    
+
     public Cidade getCidade() {
         return cidade;
     }
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
-    }
-    public String getEndereco() {
-        return endereco;
-    }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
     public long getId() {
         return id;
@@ -39,19 +31,25 @@ public class Cliente {
     public void setId(long id) {
         this.id = id;
     }
-    //construtor = mesmo nome da classe e sem um retorno
-    // func = inicializar atributos
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    //construtor - mesmo nome da classe e não te retorno
+    // inicializar atributos
     // obrigar a passagem de valores
     public Cliente(String nome) {
         this.nome = nome;
     }
-    //polimorfismo - varias formas de existir a mesma coisa
-    public Cliente(){
-    
+    //polimorfismo - várias formas de existir a mesma coisa
+    public Cliente() {
+        
     }
-    //metodo
-
-    //sobre escrita de metodo ( meu pai me deu pronto e eu reescrevi)
+    //método
+    //sobreescrita de método (meu pai 
+    //me deu pronto e eu zuera reescrevi)
     @Override
     public String toString(){
         return getNome();
@@ -65,5 +63,6 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    // encapsulamento = responder a implementacao dentro do objeto
+    //encapsulamento = esconder a 
+    // implementação dentro do objeto
 }
