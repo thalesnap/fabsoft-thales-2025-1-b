@@ -1,0 +1,73 @@
+@startuml
+package br.univille.projfabsoft.entity {
+    class Usuario {
+        - Long id
+        - String nome
+        - String email
+        - String senha
+        --
+        + Long getId()
+        + void setId(Long id)
+        + String getNome()
+        + void setNome(String nome)
+        + String getEmail()
+        + void setEmail(String email)
+        + String getSenha()
+        + void setSenha(String senha)
+    }
+
+    class Artista {
+        - Long id
+        - String nome
+        - String senha
+        --
+        + Long getId()
+        + void setId(Long id)
+        + String getNome()
+        + void setNome(String nome)
+        + String getSenha()
+        + void setSenha(String senha)
+    }
+
+    class Genero {
+        - Long id
+        - String nome
+        --
+        + Long getId()
+        + void setId(Long id)
+        + String getNome()
+        + void setNome(String nome)
+    }
+
+    class Musica {
+        - Long id
+        - String nome
+        --
+        + Long getId()
+        + void setId(Long id)
+        + String getNome()
+        + void setNome(String nome)
+        --
+        + Artista artista
+        + Genero genero
+    }
+
+    class Playlist {
+        - Long id
+        - String nome
+        --
+        + Long getId()
+        + void setId(Long id)
+        + String getNome()
+        + void setNome(String nome)
+        --
+        + Usuario usuario
+        + List<Musica> musicas
+    }
+
+    Usuario "1" --> "0..*" Playlist
+    Playlist "0..*" --> "0..*" Musica
+    Musica "0..*" --> "1" Artista
+    Musica "0..*" --> "1" Genero
+}
+@enduml
