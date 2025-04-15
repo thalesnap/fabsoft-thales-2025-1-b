@@ -1,0 +1,12 @@
+br\univille\projfabsoft\service\impl\ArtistaServiceImpl.class
+br\univille\projfabsoft\service\ClienteService.class
+br\univille\projfabsoft\service\impl\PlaylistServiceImpl.class
+br\univille\projfabsoft\service\UsuarioService.class
+br\univille\projfabsoft\service\impl\UsuarioServiceImpl.class
+br\univille\projfabsoft\service\PlaylistService.class
+br\univille\projfabsoft\service\GeneroService.class
+br\univille\projfabsoft\service\impl\GeneroServiceImpl.class
+br\univille\projfabsoft\service\ArtistaService.class
+br\univille\projfabsoft\service\impl\MusicaServiceImpl.class
+br\univille\projfabsoft\service\impl\ClienteServiceImpl.class
+br\univille\projfabsoft\service\MusicaService.class

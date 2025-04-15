@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Genero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String nome;
 
     // Getters e Setters
@@ -17,7 +17,7 @@ public class Genero {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

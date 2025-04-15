@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String nome;
     private String email;
     private String senha;
@@ -19,7 +19,7 @@ public class Usuario {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

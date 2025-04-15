@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 public class Musica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String nome;
 
     @ManyToOne
@@ -24,7 +24,7 @@ public class Musica {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
