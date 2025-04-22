@@ -1,7 +1,6 @@
 package br.univille.projfabsoft.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,27 +11,35 @@ import br.univille.projfabsoft.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
-
+    
     @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Override
-    public List<Usuario> findAll() {
-        return usuarioRepository.findAll();
-    }
-
-    @Override
-    public Optional<Usuario> findById(Long id) {
-        return usuarioRepository.findById(id);
-    }
+    private UsuarioRepository repository;
 
     @Override
     public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+        repository.save(usuario);
+        return usuario;
     }
 
     @Override
-    public void deleteById(Long id) {
-        usuarioRepository.deleteById(id);
+    public List<Usuario> getAll() {
+        return repository.findAll();
     }
+
+    @Override
+    public Usuario getById(Long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        return null;
+    }
+
+    @Override
+    public Usuario delete(Long id) {
+        var usuario = getById(id);
+        if(usuario != null)
+            repository.deleteById(id);
+        return usuario;
+    }
+
 }

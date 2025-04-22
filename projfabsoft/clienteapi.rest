@@ -6,7 +6,6 @@ POST http://localhost:8080/api/v1/usuarios
 Content-Type: application/json
 
 {
-    "id": 0,
     "nome": "bombardiro crocodiro",
     "email": "bobardiro@crocodiro.com",
     "senha": "senhaa123abc"
@@ -18,7 +17,6 @@ PUT  http://localhost:8080/api/v1/usuarios/1
 Content-Type: application/json
 
 {
-    "id": 0,
     "nome": "bombardiro crocodiro sauro junior",
     "email": "bobardiro@crocodiro.com",
     "senha": "senhaa123abc"
