@@ -1,0 +1,162 @@
+### API USUARIO - GET
+GET http://localhost:8080/api/v1/usuarios
+
+### API USUARIO - POST
+POST http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+
+{
+    "nome": "thales1",
+    "email": "thales@gmail.com",
+    "senha": "senhaa123abc"
+    
+}
+
+### API USUARIO - PUT
+PUT  http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+{
+    "nome": "thales1 novo",
+    "email": "thales@gmail.com",
+    "senha": "senhaa123abc"
+    
+}
+
+### API USUARIO - DELETE
+DELETE  http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+
+
+### API ARTISTA - GET
+GET http://localhost:8080/api/v1/artistas
+
+### API ARTISTA - POST
+POST http://localhost:8080/api/v1/artistas
+Content-Type: application/json
+
+{
+    "nome": "Ozzy Ousbourne",
+    "senha": "senha123"
+}
+
+### API ARTISTA - PUT
+PUT http://localhost:8080/api/v1/artistas/1
+Content-Type: application/json
+
+{
+    "nome": "Ozzy Ousbourne novo",
+    "senha": "novaSenha123"
+}
+
+### API ARTISTA - DELETE
+DELETE http://localhost:8080/api/v1/artistas/1
+Content-Type: application/json
+
+
+### API GENERO - GET
+GET http://localhost:8080/api/v1/generos
+
+### API GENERO - POST
+POST http://localhost:8080/api/v1/generos
+Content-Type: application/json
+
+{
+    "nome": "Rock"
+}
+
+### API GENERO - PUT
+PUT http://localhost:8080/api/v1/generos/1
+Content-Type: application/json
+
+{
+    "nome": "Pop Rock"
+}
+
+### API GENERO - DELETE
+DELETE http://localhost:8080/api/v1/generos/1
+Content-Type: application/json
+
+
+### API MUSICA - GET
+GET http://localhost:8080/api/v1/musicas
+
+### API MUSICA - POST
+POST http://localhost:8080/api/v1/musicas
+Content-Type: application/json
+
+{
+    "nome": "No More Tears",
+    "artista": {
+        "id": 1
+    },
+    "genero": {
+        "id": 1
+    }
+}
+
+### API MUSICA - PUT
+PUT http://localhost:8080/api/v1/musicas/1
+Content-Type: application/json
+
+{
+    "nome": "No More Tears Atualizada",
+    "artista": {
+        "id": 1
+    },
+    "genero": {
+        "id": 1
+    }
+}
+
+### API MUSICA - DELETE
+DELETE http://localhost:8080/api/v1/musicas/1
+Content-Type: application/json
+
+
+### API PLAYLIST - GET
+GET http://localhost:8080/api/v1/playlists
+
+### API PLAYLIST - POST
+POST http://localhost:8080/api/v1/playlists
+Content-Type: application/json
+
+{
+    "nome": "Minha Playlist Rock",
+    "usuario": {
+        "id": 1
+    },
+    "musicas": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        }
+    ]
+}
+
+### API PLAYLIST - PUT
+PUT http://localhost:8080/api/v1/playlists/1
+Content-Type: application/json
+
+{
+    "nome": "Minha Playlist Rock Atualizada",
+    "usuario": {
+        "id": 1
+    },
+    "musicas": [
+        {
+            "id": 1
+        },
+        {
+            "id": 3
+        }
+    ]
+}
+
+### API PLAYLIST - DELETE
+DELETE http://localhost:8080/api/v1/playlists/1
+Content-Type: application/json
+
