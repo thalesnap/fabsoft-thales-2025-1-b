@@ -1,6 +1,22 @@
 <main class="container">
     <h2>Usuarios</h2>
     <table class="table">
-        
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umUsuario of listaUsuarios">
+                <td>{{umUsuario.id}}</td>
+                <td>{{umUsuario.nome}}</td>
+                <td>{{umUsuario.email}}</td>
+                <td>{{umUsuario.senha}}</td>
+            </tr>
+        </tbody>
+
     </table>
 </main>
