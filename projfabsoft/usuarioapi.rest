@@ -87,13 +87,10 @@ POST http://localhost:8080/api/v1/musicas
 Content-Type: application/json
 
 {
-    "nome": "No More Tears",
-    "artista": {
-        "id": 1
-    },
-    "genero": {
-        "id": 1
-    }
+  "nome": "Nome da Música",
+  "artistaId": 1,
+  "generoId": 2,
+  "urlAudio": "https://servidor.com/musicas/minha-musica.mp3"
 }
 
 ### API MUSICA - PUT
@@ -101,13 +98,10 @@ PUT http://localhost:8080/api/v1/musicas/1
 Content-Type: application/json
 
 {
-    "nome": "No More Tears Atualizada",
-    "artista": {
-        "id": 1
-    },
-    "genero": {
-        "id": 1
-    }
+  "titulo": "Nome da Música",
+  "artistaId": 1,
+  "generoId": 2,
+  "urlAudio": "https://servidor.com/musicas/minha-musica.mp3"
 }
 
 ### API MUSICA - DELETE
@@ -124,9 +118,7 @@ Content-Type: application/json
 
 {
     "nome": "Minha Playlist Rock",
-    "usuario": {
-        "id": 1
-    },
+    "usuarioId": 1,
     "musicas": [
         {
             "id": 1
@@ -143,9 +135,7 @@ Content-Type: application/json
 
 {
     "nome": "Minha Playlist Rock Atualizada",
-    "usuario": {
-        "id": 1
-    },
+    "usuarioId": 1,
     "musicas": [
         {
             "id": 1
