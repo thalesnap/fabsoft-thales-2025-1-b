@@ -1,17 +1,12 @@
 <main class="container">
     <h2>Usuarios</h2>
-
-    <!--<a routerLink="/usuarios/novo" class="btn btn-primary">Novo</a>-->
     <a (click)="novo()" class="btn btn-primary">Novo</a>
-
-
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Senha</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,11 +15,10 @@
                 <td>{{umUsuario.id}}</td>
                 <td>{{umUsuario.nome}}</td>
                 <td>{{umUsuario.email}}</td>
-                <td>{{umUsuario.senha}}</td>
-                <td><a (click)="alterar(umUsuario)" 
-                    class="btn btn-secondary">Alterar</a></td>
+                <td>
+                    <a (click)="alterar(umUsuario)" class="btn btn-secondary">Alterar</a>
+                </td>
             </tr>
         </tbody>
-
     </table>
 </main>
