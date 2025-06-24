@@ -31,6 +31,13 @@ public class UsuarioController {
         return new ResponseEntity<>(listaUsuarios, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")	
+    public ResponseEntity<Usuario> getUsuarioId(@PathVariable Long id){
+        var usuario = service.getById(id);
+
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario){
         if(usuario == null){
