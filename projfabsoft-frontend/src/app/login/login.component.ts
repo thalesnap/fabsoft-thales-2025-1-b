@@ -20,7 +20,7 @@ export class LoginComponent {
     // Exemplo: se login for bem-sucedido, redireciona para a home
     if (this.email && this.senha) {
       // Simulação de login
-      this.router.navigate(['']);
+      this.router.navigate(['/player']);
     } else {
       alert('Preencha todos os campos!');
     }

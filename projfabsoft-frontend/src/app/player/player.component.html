@@ -1,0 +1,23 @@
+<main class="container mt-4">
+  <h2>Player Principal</h2>
+
+  <div *ngIf="musicaTocando" class="alert alert-info">
+    Tocando agora: {{ musicaTocando.nome }} - {{ musicaTocando.artista.nome }}
+    <audio #audioPlayer [src]="musicaTocando.urlAudio" controls autoplay style="width:100%;margin-top:10px;"></audio>
+  </div>
+
+  <h4>Músicas</h4>
+  <ul class="list-group mb-4">
+    <li *ngFor="let musica of musicas" class="list-group-item d-flex justify-content-between align-items-center">
+      {{ musica.nome }} - <span class="text-muted">{{ musica.artista.nome }}</span>
+      <button class="btn btn-sm btn-primary" (click)="tocar(musica)">Escutar</button>
+    </li>
+  </ul>
+
+  <h4>Artistas</h4>
+  <ul class="list-group">
+    <li *ngFor="let artista of artistas" class="list-group-item">
+      {{ artista.nome }}
+    </li>
+  </ul>
+</main>

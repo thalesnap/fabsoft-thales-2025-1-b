@@ -11,11 +11,13 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { FormPlaylistComponent } from './form-playlist/form-playlist.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PlayerComponent } from './player/player.component';
 
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
+    { path: 'player', component: PlayerComponent },
 
     { path: 'usuarios', component: UsuarioComponent},
     { path: 'usuarios/novo', component: FormUsuarioComponent},

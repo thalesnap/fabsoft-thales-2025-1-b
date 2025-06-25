@@ -35,7 +35,7 @@ export class FormUsuarioComponent {
   salvar(){
     this.usuarioService.saveUsuario(this.usuario)
       .subscribe(resultado => {
-        this.router.navigate(['usuarios']);
+        this.router.navigate(['/player']);
       }
 
       )
