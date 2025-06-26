@@ -1,9 +1,23 @@
-<main class="container text-center mt-5">
-  <h1>Bem-vindo ao Music Player!</h1>
-  <p>Seu site para ouvir músicas, criar playlists e descobrir novos artistas.</p>
-  <div class="my-4">
-    <button routerLink="/login" class="btn btn-primary mx-2">Entrar</button>
-    <button routerLink="/usuarios/novo" class="btn btn-success mx-2">Criar Conta</button>
+<nav class="navbar navbar-dark bg-dark justify-content-between px-4">
+  <span class="navbar-brand mb-0 h1 logo-musicplayer">MusicPlayer</span>
+  <a routerLink="/usuarios/novo" class="btn btn-outline-light">Criar Conta</a>
+</nav>
+<main class="d-flex align-items-center justify-content-center main-bg">
+  <div class="row w-100">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-start px-5">
+      <h1 class="main-title">
+        <span class="highlight">Ouça</span> músicas.
+      </h1>
+      <p class="main-desc">
+        Descubra artistas, e curta suas músicas favoritas em um só lugar.
+      </p>
+      <div class="mt-4">
+        <button routerLink="/login" class="btn btn-pink me-3">Entrar</button>
+        <button routerLink="/usuarios/novo" class="btn btn-outline-light">Criar Conta</button>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img src="assets/img.jpg" alt="Player de Música" class="main-img">
+    </div>
   </div>
-  <img src="assets/music-player-banner.png" alt="Player de Música" style="max-width: 400px; margin-top: 30px;">
 </main>

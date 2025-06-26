@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #181f2a !important;
+}
+
+body {
+  min-height: 100vh;
+  background: #181f2a !important;
+}
+
+.main-bg {
+  min-height: 90vh;
+  background: #181f2a;
+}
+
+.logo-musicplayer {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.main-title {
+  color: #fff;
+}
+
+.highlight {
+  color: #ff3571;
+}
+
+.main-desc {
+  color: #b0b8c1;
+  max-width: 400px;
+}
+
+.main-img {
+  max-width: 400px;
+}
+
+.btn-pink {
+  background: #ff3571;
+  color: #fff;
+  border: none;
+}
+
+.btn-pink:hover {
+  background: #e02e65;
+  color: #fff;
+}

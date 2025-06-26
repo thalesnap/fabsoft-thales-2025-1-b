@@ -1,0 +1,134 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #181f2a !important;
+}
+
+body {
+  min-height: 100vh;
+  background: #181f2a !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-bg {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #181f2a;
+}
+
+.login-card {
+  background: rgba(35, 43, 56, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 40px 32px 32px 32px;
+  min-width: 370px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  border-radius: 30px !important; /* borda totalmente arredondada */
+  background: #232b38;
+  color: #fff;
+  border: 1.5px solid #fff;
+  padding: 14px 20px;
+  font-size: 1rem;
+  box-shadow: none;
+  transition: border 0.2s;
+}
+
+.login-input:focus {
+  background: #232b38;
+  color: #fff;
+  border: 2px solid #3571ff;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+
+.input-group-text.login-icon {
+  background: #232b38;
+  border: none;
+  border-radius: 30px;
+  color: #aaa;
+  font-size: 1.2rem;
+  padding-right: 18px;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.login-options {
+  width: 100%;
+}
+
+.login-options label,
+.forgot-link {
+  color: #fff !important;
+  font-size: 0.98rem;
+}
+
+.forgot-link {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: #3571ff;
+}
+
+.login-btn {
+  background: #3571ff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  margin-top: 10px;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background: #2856c7;
+}
+
+.logo-musicplayer {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.register-link {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+}

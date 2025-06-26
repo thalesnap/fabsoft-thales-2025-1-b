@@ -1,4 +1,7 @@
-<main class="container">
+<nav class="navbar navbar-dark bg-dark px-4">
+  <a routerLink="/" class="navbar-brand mb-0 h1 logo-musicplayer" style="cursor:pointer;">MusicPlayer</a>
+</nav>
+<main class="usuario-main">
     <h2>Usuario</h2>
     <div class="card">
         <div class="card-body">
@@ -15,6 +18,6 @@
                 <input type="password" [(ngModel)]="usuario.senha" class="form-control" id="txtSenha">
             </div>
         </div>
-        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+        <button (click)="salvar()" class="btn btn-primary w-100">Salvar</button>
     </div>
 </main>

@@ -1,34 +1,58 @@
-import { Component } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+interface Musica {
+  titulo: string;
+  artista: string;
+  album: string;
+  urlAudio: string;
+}
 
 @Component({
   selector: 'app-player',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './player.component.html',
   styleUrl: './player.component.css'
 })
 export class PlayerComponent {
-  musicas: any[] = [];
-  artistas: any[] = [];
-  musicaTocando: any = null;
-  audioPlayer: any;
+  musicas: Musica[] = [
+    {
+      titulo: 'One',
+      artista: 'Metallica',
+      album: 'And Justice For All',
+      urlAudio: 'assets/Metallica-One.mp3'
+    },
+    {
+      titulo: 'Breed',
+      artista: 'Nirvana',
+      album: 'Nevermind',
+      urlAudio: 'assets/Nirvana-Breed.mp3'
+    },
+    {
+      titulo: 'Time to Pretend',
+      artista: 'MGMT',
+      album: 'Oracular Spectacular',
+      urlAudio: 'assets/TimeToPretend.mp3'
+    },
+      {
+      titulo: 'Breed',
+      artista: 'Nirvana',
+      album: 'Nevermind',
+      urlAudio: 'assets/'
+    },
+  ];
 
-  constructor(private http: HttpClient) {}
+  
+  musicaTocando: Musica = this.musicas[0];
 
-  ngOnInit() {
-    this.http.get<any[]>('http://localhost:8080/api/v1/musicas').subscribe(data => this.musicas = data);
-    this.http.get<any[]>('http://localhost:8080/api/v1/artistas').subscribe(data => this.artistas = data);
-  }
+  @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
 
-  tocar(musica: any) {
+  tocar(musica: Musica) {
     this.musicaTocando = musica;
-setTimeout(() => {
-      if (this.audioPlayer && this.audioPlayer.nativeElement) {
-        this.audioPlayer.nativeElement.load();
-        this.audioPlayer.nativeElement.play();
-      }
+    setTimeout(() => {
+      this.audioPlayer?.nativeElement.load();
+      this.audioPlayer?.nativeElement.play();
     }, 0);
   }
 }
