@@ -46,7 +46,6 @@ PUT http://localhost:8080/api/v1/artistas/1
 Content-Type: application/json
 
 {
-    "id": 1,
     "nome": "Ozzy Ousbourne novo",
     "senha": "novaSenha123"
 }
@@ -64,7 +63,6 @@ POST http://localhost:8080/api/v1/generos
 Content-Type: application/json
 
 {
-    "id": 1,
     "nome": "Rock"
 }
 
@@ -89,14 +87,14 @@ POST http://localhost:8080/api/v1/musicas
 Content-Type: application/json
 
 {
-  "nome": "Nome da Música",
+  "nome": "One",
   "artista": {
     "id": 1
   },
   "genero": {
     "id": 2
   },
-  "urlAudio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  "urlAudio": "/assets/Metallica_One.mp3"
 
 }
 
@@ -112,7 +110,7 @@ Content-Type: application/json
     "genero": {
         "id": 2
     },
-    "urlAudio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    "urlAudio": "zzz"
 }
 
 ### API MUSICA - DELETE
