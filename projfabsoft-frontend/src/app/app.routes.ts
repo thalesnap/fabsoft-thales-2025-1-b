@@ -8,12 +8,15 @@ import { FormArtistaComponent } from './form-artista/form-artista.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PlayerComponent } from './player/player.component';
-import { LikedSongsComponent } from './liked-songs/liked-songs.component';
+import { MusicaComponent } from './musica/musica.component';
+
 
 
 export const routes: Routes = [
 
-    { path: 'liked-songs', component: LikedSongsComponent },
+    { path: 'musicas', component: MusicaComponent},
+
+
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'player', component: PlayerComponent },

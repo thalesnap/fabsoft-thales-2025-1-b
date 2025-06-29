@@ -2,30 +2,26 @@
   <aside class="sidebar">
     <nav>
       <ul>
-        <li ><span>🏠</span> Home</li>
-        <li routerLink="/liked-songs" routerLinkActive="active"><span>❤️</span> Liked Songs</li>
+        <li class="h2"><span>🎵</span>MusicPlayer</li>
+        <li routerLink="/musica" routerLinkActive="active"><span>❤️</span>Musicas Curtidas</li>
         <li><span>➕</span> Playlist</li>
-        <li><span>👤</span> Profile</li>
+        <li><span>👤</span> Perfil</li>
       </ul>
     </nav>
-    <div class="sidebar-footer">
-      <span>Cookies</span>
-      <span>Privacy</span>
-    </div>
   </aside>
   <main class="main-content">
     <div class="top-bar">
       <span class="now-playing">Tocando: {{ musicaTocando.titulo }}</span>
     </div>
-    <input class="search-input" type="text" placeholder="Search Song Name"
+    <input class="search-input" type="text" placeholder="Procurar Musicas"
   [(ngModel)]="searchTerm" />
     
     <table class="music-table">
       <thead>
         <tr>
-          <th>Artist Name</th>
-          <th>Song Name</th>
-          <th>Genre</th>
+          <th>Artista</th>
+          <th>Nome da Musica</th>
+          <th>Album</th>
           <th></th>
           <th></th>
         </tr>
