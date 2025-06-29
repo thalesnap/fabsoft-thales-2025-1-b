@@ -2,17 +2,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #181f2a !important;
+  background: linear-gradient(135deg, #fff 60%, #3571ff 100%);
 }
 
 body {
   min-height: 100vh;
-  background: #181f2a !important;
+ background: linear-gradient(135deg, #fff 60%, #3571ff 100%);
 }
 
 .main-bg {
-  min-height: 90vh;
-  background: #181f2a;
+  min-height: 94vh;
+  background: linear-gradient(135deg, #fff 60%, #3571ff 100%);
 }
 
 .logo-musicplayer {
@@ -23,15 +23,15 @@ body {
 }
 
 .main-title {
-  color: #fff;
+  color: #000;
 }
 
 .highlight {
-  color: #ff3571;
+  color: #ff0000;
 }
 
 .main-desc {
-  color: #b0b8c1;
+  color: #000;
   max-width: 400px;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .btn-pink {
-  background: #ff3571;
+  background: #ff0000;
   color: #fff;
   border: none;
 }
@@ -49,3 +49,10 @@ body {
   background: #e02e65;
   color: #fff;
 }
+
+.btn-outline-light {
+  color: #fff;
+  border: none;
+  background: #3571ff;
+}
+

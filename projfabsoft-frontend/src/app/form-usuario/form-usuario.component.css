@@ -1,5 +1,3 @@
-
-
 .usuario-main {
   flex: 1 0 auto;
   min-height: calc(100vh - 56px);
@@ -7,14 +5,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #181f2a;
+  background: linear-gradient(135deg, #fff 60%, #3571ff 100%);
   color: #fff;
+  padding: 2rem 1rem;
 }
 
 .card {
-  background: #232b38;
+  background: rgba(35, 43, 56, 0.95);
+  border-radius: 20px;
   border: none;
-  min-width: 900px;
+  min-width: 350px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  margin-bottom: 2rem;
 }
 
 .card-body {
@@ -34,9 +38,43 @@ label {
 }
 
 h2 {
-  color: #fff;
+  color: #000;
+  font-weight: bold;
   margin-bottom: 1rem;
+  text-align: center;
 }
+
 .form-control {
   width: 100%;
+  border-radius: 30px;
+  background: #232b38;
+  color: #fff;
+  border: 1.5px solid #fff;
+  padding: 14px 20px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border 0.2s;
+}
+
+.form-control:focus {
+  border: 2px solid #3571ff;
+  outline: none;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background: #3571ff;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #2851a3;
+  color: #fff;
 }
