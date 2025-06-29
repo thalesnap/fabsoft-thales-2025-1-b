@@ -3,7 +3,8 @@
     <nav>
       <ul>
         <li ><span>🏠</span> Home</li>
-        <li><span>❤️</span> Liked Songs</li>
+        <li routerLink="/liked-songs" routerLinkActive="active"><span>❤️</span> Liked Songs</li>
+        <li><span>➕</span> Playlist</li>
         <li><span>👤</span> Profile</li>
       </ul>
     </nav>
@@ -25,7 +26,7 @@
           <th>Artist Name</th>
           <th>Song Name</th>
           <th>Genre</th>
-          <th>Song Type</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -34,8 +35,8 @@
           <td>{{ musica.artista }}</td>
           <td>{{ musica.titulo }}</td>
           <td>{{ musica.album }}</td>
-          <td>English</td>
-          <td>⋮</td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>

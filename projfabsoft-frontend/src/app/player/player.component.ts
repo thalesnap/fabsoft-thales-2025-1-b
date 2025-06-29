@@ -19,16 +19,22 @@ interface Musica {
 export class PlayerComponent {
   musicas: Musica[] = [
     {
+      titulo: 'Instant Crush',
+      artista: 'Daft Punk',
+      album: 'Random Access Memories',
+      urlAudio: 'assets/DaftPunk-InstantCrush.mp3'
+    },
+    {
       titulo: 'One',
       artista: 'Metallica',
       album: 'And Justice For All',
       urlAudio: 'assets/Metallica-One.mp3'
     },
     {
-      titulo: 'Breed',
-      artista: 'Nirvana',
-      album: 'Nevermind',
-      urlAudio: 'assets/Nirvana-Breed.mp3'
+      titulo: 'Quase Sem Querer',
+      artista: 'Legião Urbana',
+      album: 'As Quatro Estações',
+      urlAudio: 'assets/QuaseSemQuerer.mp3'
     },
     {
       titulo: 'Time to Pretend',
@@ -36,12 +42,7 @@ export class PlayerComponent {
       album: 'Oracular Spectacular',
       urlAudio: 'assets/TimeToPretend.mp3'
     },
-      {
-      titulo: 'Breed',
-      artista: 'Nirvana',
-      album: 'Nevermind',
-      urlAudio: 'assets/'
-    },
+
   ];
 
   
@@ -65,5 +66,19 @@ export class PlayerComponent {
       this.audioPlayer?.nativeElement.load();
       this.audioPlayer?.nativeElement.play();
     }, 0);
+  }
+    likedSongs: Musica[] = [];
+    menuAberto: Musica | null = null;
+
+  toggleMenu(musica: Musica, event: MouseEvent) {
+    event.stopPropagation();
+    this.menuAberto = this.menuAberto === musica ? null : musica;
+  }
+
+  curtirMusica(musica: Musica) {
+    if (!this.likedSongs.includes(musica)) {
+      this.likedSongs.push(musica);
+    }
+    this.menuAberto = null;
   }
 }
