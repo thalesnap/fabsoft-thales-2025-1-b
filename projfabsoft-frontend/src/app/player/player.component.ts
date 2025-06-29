@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 interface Musica {
   titulo: string;
@@ -11,7 +12,7 @@ interface Musica {
 @Component({
   selector: 'app-player',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './player.component.html',
   styleUrl: './player.component.css'
 })
@@ -45,8 +46,18 @@ export class PlayerComponent {
 
   
   musicaTocando: Musica = this.musicas[0];
+  searchTerm: string = '';
 
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
+
+  get musicasFiltradas() {
+    const term = this.searchTerm.trim().toLowerCase();
+    if (!term) return this.musicas;
+    return this.musicas.filter(m =>
+      m.titulo.toLowerCase().includes(term) ||
+      m.artista.toLowerCase().includes(term)
+    );
+  }
 
   tocar(musica: Musica) {
     this.musicaTocando = musica;

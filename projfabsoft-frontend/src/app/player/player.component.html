@@ -1,25 +1,46 @@
-<div class="player-header">
-  <a href="#" class="navbar-brand mb-0 h1 logo-musicplayer">MusicPlayer</a>
-  <span class="now-playing">Tocando: {{ musicaTocando.titulo }}</span>
-</div>
-
-<table class="music-table">
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Artista</th>
-      <th>Album</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let musica of musicas" (click)="tocar(musica)" [class.selected]="musica === musicaTocando">
-      <td>{{ musica.titulo }}</td>
-      <td>{{ musica.artista }}</td>
-      <td>{{ musica.album }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="audio-container">
-  <audio #audioPlayer [src]="musicaTocando.urlAudio" controls autoplay></audio>
+<div class="container-musicplayer">
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li ><span>🏠</span> Home</li>
+        <li><span>❤️</span> Liked Songs</li>
+        <li><span>👤</span> Profile</li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <span>Cookies</span>
+      <span>Privacy</span>
+    </div>
+  </aside>
+  <main class="main-content">
+    <div class="top-bar">
+      <span class="now-playing">Tocando: {{ musicaTocando.titulo }}</span>
+    </div>
+    <input class="search-input" type="text" placeholder="Search Song Name"
+  [(ngModel)]="searchTerm" />
+    
+    <table class="music-table">
+      <thead>
+        <tr>
+          <th>Artist Name</th>
+          <th>Song Name</th>
+          <th>Genre</th>
+          <th>Song Type</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let musica of musicasFiltradas" (click)="tocar(musica)" [class.selected]="musica === musicaTocando">
+          <td>{{ musica.artista }}</td>
+          <td>{{ musica.titulo }}</td>
+          <td>{{ musica.album }}</td>
+          <td>English</td>
+          <td>⋮</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="audio-container">
+      <audio #audioPlayer [src]="musicaTocando.urlAudio" controls autoplay></audio>
+    </div>
+  </main>
 </div>
