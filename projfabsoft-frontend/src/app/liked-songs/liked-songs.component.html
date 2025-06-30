@@ -1,0 +1,23 @@
+<div class="main-content">
+  <h2>Músicas Curtidas</h2>
+  <table class="music-table">
+    <thead>
+      <tr>
+        <th>Artista</th>
+        <th>Nome da Música</th>
+        <th>Álbum</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let musica of likedSongs" (click)="tocar(musica)" [class.selected]="musica === musicaTocando">
+        <td>{{ musica.artista }}</td>
+        <td>{{ musica.titulo }}</td>
+        <td>{{ musica.album }}</td>
+        <td>
+          <button (click)="descurtirMusica(musica); $event.stopPropagation()">💔</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

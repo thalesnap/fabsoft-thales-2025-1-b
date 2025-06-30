@@ -2,41 +2,15 @@
   <aside class="sidebar">
     <nav>
       <ul>
-        <li class="h2"><span>🎵</span>MusicPlayer</li>
-        <li routerLink="/musica" routerLinkActive="active"><span>❤️</span>Musicas Curtidas</li>
-        <li><span>➕</span> Playlist</li>
-        <li><span>👤</span> Perfil</li>
+        <li class="h2" [routerLink]="['/player']" routerLinkActive="active"><span>🎧</span>MusicPlayer</li>
+        <li [routerLink]="['/player/liked-songs']" routerLinkActive="active"><span>❤️</span>Músicas Curtidas</li>
+        <li [routerLink]="['/player/profile']" routerLinkActive="active"><span>👤</span>Perfil</li>
       </ul>
     </nav>
   </aside>
   <main class="main-content">
-    <div class="top-bar">
-      <span class="now-playing">Tocando: {{ musicaTocando.titulo }}</span>
-    </div>
-    <input class="search-input" type="text" placeholder="Procurar Musicas"
-  [(ngModel)]="searchTerm" />
-    
-    <table class="music-table">
-      <thead>
-        <tr>
-          <th>Artista</th>
-          <th>Nome da Musica</th>
-          <th>Album</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let musica of musicasFiltradas" (click)="tocar(musica)" [class.selected]="musica === musicaTocando">
-          <td>{{ musica.artista }}</td>
-          <td>{{ musica.titulo }}</td>
-          <td>{{ musica.album }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="audio-container">
+    <router-outlet></router-outlet>
+    <div class="audio-container" *ngIf="musicaTocando">
       <audio #audioPlayer [src]="musicaTocando.urlAudio" controls autoplay></audio>
     </div>
   </main>

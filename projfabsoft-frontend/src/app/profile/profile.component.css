@@ -1,0 +1,21 @@
+.main-content {
+  padding: 20px;
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-photo input {
+  margin-top: 10px;
+}
+.profile-details {
+  text-align: center;
+}

@@ -11,36 +11,32 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   imports: [HttpClientModule, CommonModule, FormsModule],
   templateUrl: './form-usuario.component.html',
   styleUrl: './form-usuario.component.css',
-  providers: [UsuarioService, Router] 
+  providers: [UsuarioService, Router]
 })
 export class FormUsuarioComponent {
   usuario: Usuario = new Usuario();
 
   constructor(
-    private usuarioService:UsuarioService,
-    private router:Router,
+    private usuarioService: UsuarioService,
+    private router: Router,
     private activeRouter: ActivatedRoute
   ) {
-    
     const id = this.activeRouter.snapshot.paramMap.get('id');
-    
     if (id) {
       this.usuarioService.getUsuarioById(id).subscribe(usuario => {
         this.usuario = usuario;
-    });
-    
+      });
+    }
   }
-}
 
-  salvar(){
-    this.usuarioService.saveUsuario(this.usuario)
-      .subscribe(resultado => {
+  salvar() {
+    this.usuarioService.saveUsuario(this.usuario).subscribe(
+      (resultado: any) => {
+        // Armazena o ID do usuário autenticado (simulação)
+        localStorage.setItem('currentUserId', resultado.id?.toString() || '');
         this.router.navigate(['/player']);
-      }
-
-      )
+      },
+      error => console.error('Erro ao salvar usuário:', error)
+    );
   }
-
-
-
 }
