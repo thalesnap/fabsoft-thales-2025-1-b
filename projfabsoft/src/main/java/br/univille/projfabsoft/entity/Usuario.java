@@ -13,6 +13,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private String fotoUrl; // Adiciona o campo para a URL da foto
 
     // Getters e Setters
     public Long getId() {
@@ -45,5 +46,13 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
+
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
     }
 }
