@@ -32,9 +32,16 @@ export class FormUsuarioComponent {
   salvar() {
     this.usuarioService.saveUsuario(this.usuario).subscribe(
       (resultado: any) => {
-        // Armazena o ID do usuário autenticado (simulação)
         localStorage.setItem('currentUserId', resultado.id?.toString() || '');
-        this.router.navigate(['/player']);
+        // Forçar reinicialização do roteador
+        this.router.navigate(['/player']).then(() => {
+          console.log('Redirecionado para /player após cadastro');
+          // Forçar recarregamento da rota
+          this.router.navigated = false;
+          this.router.navigate(['/player']);
+        }).catch(err => {
+          console.error('Erro na navegação:', err);
+        });
       },
       error => console.error('Erro ao salvar usuário:', error)
     );

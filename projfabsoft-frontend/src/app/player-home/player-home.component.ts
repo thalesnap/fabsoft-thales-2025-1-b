@@ -42,6 +42,12 @@ export class PlayerHomeComponent {
       artista: 'MGMT',
       album: 'Oracular Spectacular',
       urlAudio: 'assets/TimeToPretend.mp3'
+    },
+    {
+      titulo: 'Space Song',
+      artista: 'Beach House',
+      album: 'Depression Cherry',
+      urlAudio: 'assets/SpaceSong.mp3'
     }
   ];
 
