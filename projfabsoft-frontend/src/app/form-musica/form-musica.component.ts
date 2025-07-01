@@ -23,23 +23,26 @@ export class FormMusicaComponent {
   ) {
     const id = this.activeRouter.snapshot.paramMap.get('id');
     if (id) {
-      this.musicaService.getMusicaById(id).subscribe(m => {
+      this.musicaService.getMusicaById(+id).subscribe(m => {
         this.musica = m;
       });
     }
   }
 
-  salvar() {
-    const musicaPayload = {
-      id: this.musica.id,
-      nome: this.musica.nome,
-      urlArquivo: this.musica.urlArquivo
-    };
-    this.musicaService.saveMusica(musicaPayload).subscribe({
-      next: () => this.router.navigate(['musicas']),
-      error: (err) => {
-        alert('Falha ao salvar a música.');
-      }
-    });
+salvar() {
+  if (!this.musica.id && this.activeRouter.snapshot.paramMap.get('id')) {
+    this.musica.id = +this.activeRouter.snapshot.paramMap.get('id')!;
   }
-}
+  const musicaPayload = {
+    id: this.musica.id,
+    nome: this.musica.nome,
+    urlArquivo: this.musica.urlArquivo
+  };
+  this.musicaService.saveMusica(musicaPayload).subscribe({
+    next: () => this.router.navigate(['musicas']),
+    error: (err) => {
+      console.error('Erro ao salvar música:', err);
+      alert('Falha ao salvar a música.');
+    }
+  });
+}}
