@@ -6,16 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-form-musica',
   imports: [HttpClientModule, CommonModule, FormsModule],
   templateUrl: './form-musica.component.html',
   styleUrl: './form-musica.component.css',
-  providers: [MusicaService, Router, ]
+  providers: [MusicaService, Router]
 })
 export class FormMusicaComponent {
   musica: Musica = new Musica();
+  selectedFile: File | null = null;
 
   constructor(
     private musicaService: MusicaService,
@@ -30,10 +30,21 @@ export class FormMusicaComponent {
     }
   }
 
-  salvar(){
-    this.musicaService.saveMusica(this.musica)
-      .subscribe(resultado => {
-          this.router.navigate(['musicas']);
-      });
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
   }
+
+salvar() {
+  const musicaPayload = {
+    id: this.musica.id,
+    nome: this.musica.nome,
+    mp3Data: this.musica.mp3Data // mantém o mp3Data original
+  };
+  this.musicaService.saveMusica(musicaPayload).subscribe({
+    next: () => this.router.navigate(['musicas']),
+    error: (err) => {
+      alert('Falha ao salvar a música.');
+    }
+  });
+}
 }

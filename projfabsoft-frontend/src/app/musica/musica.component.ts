@@ -51,6 +51,11 @@ export class MusicaComponent {
     });
   }
 
+ouvir(musica: Musica) {
+  const audioUrl = 'data:audio/mp3;base64,' + musica.mp3Data;
+  window.open(audioUrl);
+}
+
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
   private musicaSelecionada!: Musica;
