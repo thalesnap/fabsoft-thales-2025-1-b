@@ -52,10 +52,8 @@ export class MusicaComponent {
   }
 
 ouvir(musica: Musica) {
-  const audioUrl = 'data:audio/mp3;base64,' + musica.mp3Data;
-  window.open(audioUrl);
+  window.open('http://localhost:8080' + musica.urlArquivo);
 }
-
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
   private musicaSelecionada!: Musica;

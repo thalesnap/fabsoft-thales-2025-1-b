@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class FormMusicaComponent {
   musica: Musica = new Musica();
-  selectedFile: File | null = null;
 
   constructor(
     private musicaService: MusicaService,
@@ -30,21 +29,17 @@ export class FormMusicaComponent {
     }
   }
 
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+  salvar() {
+    const musicaPayload = {
+      id: this.musica.id,
+      nome: this.musica.nome,
+      urlArquivo: this.musica.urlArquivo
+    };
+    this.musicaService.saveMusica(musicaPayload).subscribe({
+      next: () => this.router.navigate(['musicas']),
+      error: (err) => {
+        alert('Falha ao salvar a música.');
+      }
+    });
   }
-
-salvar() {
-  const musicaPayload = {
-    id: this.musica.id,
-    nome: this.musica.nome,
-    mp3Data: this.musica.mp3Data // mantém o mp3Data original
-  };
-  this.musicaService.saveMusica(musicaPayload).subscribe({
-    next: () => this.router.navigate(['musicas']),
-    error: (err) => {
-      alert('Falha ao salvar a música.');
-    }
-  });
-}
 }

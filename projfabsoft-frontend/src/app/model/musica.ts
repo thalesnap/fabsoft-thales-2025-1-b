@@ -1,5 +1,5 @@
- export class Musica {
-       id?: number;
-       nome: string = '';
-       mp3Data?: string;
-     }
+export class Musica {
+  id?: number;
+  nome: string = '';
+  urlArquivo: string = '';
+}
