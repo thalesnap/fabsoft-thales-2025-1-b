@@ -34,11 +34,11 @@ export class FormUsuarioComponent {
       (resultado: any) => {
         localStorage.setItem('currentUserId', resultado.id?.toString() || '');
         // Forçar reinicialização do roteador
-        this.router.navigate(['/player']).then(() => {
+        this.router.navigate(['/usuarios']).then(() => {
           console.log('Redirecionado para /player após cadastro');
           // Forçar recarregamento da rota
           this.router.navigated = false;
-          this.router.navigate(['/player']);
+          this.router.navigate(['/usuarios']);
         }).catch(err => {
           console.error('Erro na navegação:', err);
         });
