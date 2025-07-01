@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Musica {
@@ -12,12 +11,19 @@ public class Musica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
+    private String artista;
+    private String senha;
 
-    @ManyToOne
-    private Artista artista;
 
-    @ManyToOne
-    private Genero genero;
+    public String getArtista() {
+        return artista;
+    }
+
+    public void setArtista(String artista) {
+        this.artista = artista;
+    }
+
+
 
     // Getters e Setters
     public Long getId() {
@@ -36,19 +42,16 @@ public class Musica {
         this.nome = nome;
     }
 
-    public Artista getArtista() {
-        return artista;
+
+
+  
+
+    public String getSenha() {
+        return senha;
     }
 
-    public void setArtista(Artista artista) {
-        this.artista = artista;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
 }
