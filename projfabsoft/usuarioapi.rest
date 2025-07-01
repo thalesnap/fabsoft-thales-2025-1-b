@@ -89,7 +89,7 @@ Content-Type: application/json
 
 {
   "nome": "Space Song",
-  "mp3Data": "BASE64_GERADO"
+  "urlArquivo": "/musicas/SpaceSong.mp3"
 }
 
 
@@ -99,7 +99,7 @@ Content-Type: application/json
 
 {
   "nome": "Primeira",
-  "mp3Data": "NOVO_BASE64_SE_QUISER_ATUALIZAR"
+  "urlArquivo": "NOVO_BASE64_SE_QUISER_ATUALIZAR"
 }
 
 ### API MUSICA - DELETE
