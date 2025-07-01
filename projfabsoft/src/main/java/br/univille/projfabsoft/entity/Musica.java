@@ -1,57 +1,20 @@
-package br.univille.projfabsoft.entity;
+     package br.univille.projfabsoft.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+     import jakarta.persistence.*;
 
-@Entity
-public class Musica {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String nome;
-    private String artista;
-    private String senha;
+     @Entity
+     public class Musica {
+         @Id
+         @GeneratedValue(strategy = GenerationType.IDENTITY)
+         private long id;
+         private String nome;
+         @Column(columnDefinition = "CLOB")
+         private String mp3Data;
 
-
-    public String getArtista() {
-        return artista;
-    }
-
-    public void setArtista(String artista) {
-        this.artista = artista;
-    }
-
-
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-
-
-  
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-}
+         public Long getId() { return id; }
+         public void setId(long id) { this.id = id; }
+         public String getNome() { return nome; }
+         public void setNome(String nome) { this.nome = nome; }
+         public String getMp3Data() { return mp3Data; }
+         public void setMp3Data(String mp3Data) { this.mp3Data = mp3Data; }
+     }

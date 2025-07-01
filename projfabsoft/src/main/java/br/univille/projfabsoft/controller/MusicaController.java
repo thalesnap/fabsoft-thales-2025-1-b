@@ -1,65 +1,67 @@
 package br.univille.projfabsoft.controller;
 
-import java.util.List;
+     import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+     import org.springframework.beans.factory.annotation.Autowired;
+     import org.springframework.http.HttpStatus;
+     import org.springframework.http.ResponseEntity;
+     import org.springframework.web.bind.annotation.*;
 
-import br.univille.projfabsoft.entity.Musica;
-import br.univille.projfabsoft.service.MusicaService;
+     import br.univille.projfabsoft.entity.Musica;
+     import br.univille.projfabsoft.service.MusicaService;
+     import org.slf4j.Logger;
+     import org.slf4j.LoggerFactory;
 
-@RestController
-@RequestMapping("/api/v1/musicas")
-public class MusicaController {
+     @RestController
+     @RequestMapping("/api/v1/musicas")
+     public class MusicaController {
+         private static final Logger logger = LoggerFactory.getLogger(MusicaController.class);
 
-    @Autowired
-    private MusicaService service;
+         @Autowired
+         private MusicaService service;
 
-    @GetMapping
-    public ResponseEntity<List<Musica>> getMusicas() {
-        var listaMusicas = service.getAll();
-        return new ResponseEntity<>(listaMusicas, HttpStatus.OK);
-    }
+         @GetMapping
+         public ResponseEntity<List<Musica>> getMusicas() {
+             var listaMusicas = service.getAll();
+             return new ResponseEntity<>(listaMusicas, HttpStatus.OK);
+         }
 
-    @PostMapping
-    public ResponseEntity<Musica> postMusica(@RequestBody Musica musica) {
-        if (musica == null) {
-            return ResponseEntity.badRequest().build();
-        }
-        if (musica.getId() == 0) {
-            service.save(musica);
-            return new ResponseEntity<>(musica, HttpStatus.OK);
-        }
-        return ResponseEntity.badRequest().build();
-    }
+     @PostMapping
+     public ResponseEntity<Musica> postMusica(@RequestBody Musica musica) {
+         if (musica == null) {
+             logger.error("Corpo da requisição nulo");
+             return ResponseEntity.badRequest().build();
+         }
+         logger.info("Recebendo música: nome={}, mp3Data length={}", musica.getNome(),
+                     musica.getMp3Data() != null ? musica.getMp3Data().length() : 0);
+         try {
+             service.save(musica);
+             return new ResponseEntity<>(musica, HttpStatus.CREATED);
+         } catch (Exception e) {
+             logger.error("Erro ao salvar música: {}", e.getMessage(), e);
+             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+         }
+     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Musica> updateMusica(@PathVariable Long id, @RequestBody Musica musica) {
-        var existingMusica = service.getById(id);
-        if (existingMusica == null) {
-            return ResponseEntity.notFound().build();
-        }
-        musica.setId(id); // Garante que o ID não será alterado
-        service.save(musica);
-        return new ResponseEntity<>(musica, HttpStatus.OK);
-    }
-    
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMusica(@PathVariable Long id) {
-        var existingMusica = service.getById(id);
-        if (existingMusica == null) {
-            return ResponseEntity.notFound().build();
-        }
-        service.delete(id);
-        return ResponseEntity.noContent().build();
-    }
-}
+         @PutMapping("/{id}")
+         public ResponseEntity<Musica> updateMusica(@PathVariable Long id, @RequestBody Musica musica) {
+             var existingMusica = service.getById(id);
+             if (existingMusica == null) {
+                 return ResponseEntity.notFound().build();
+             }
+             musica.setId(id);
+             logger.info("Atualizando música: {}", musica);
+             service.save(musica);
+             return new ResponseEntity<>(musica, HttpStatus.OK);
+         }
+
+         @DeleteMapping("/{id}")
+         public ResponseEntity<Void> deleteMusica(@PathVariable Long id) {
+             var existingMusica = service.getById(id);
+             if (existingMusica == null) {
+                 return ResponseEntity.notFound().build();
+             }
+             service.delete(id);
+             return ResponseEntity.noContent().build();
+         }
+     }
