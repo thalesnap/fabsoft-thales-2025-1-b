@@ -3,6 +3,21 @@
 ## Nome da Equipe
 - Thales Pedri
 
+## Tecnologias Utilizadas
+
+### Backend
+- **Java 17+** com Spring Boot
+- Spring Data JPA
+- Banco de dados H2
+- REST API
+
+### Frontend
+- **Angular**
+- TypeScript
+- HTML5 + CSS3
+
+---
+
 ## Proposta de Projeto
 
  - Sistema para Escutar Músicas
@@ -14,8 +29,12 @@
     - Controle de Musica(Pausar, Voltar, Avançar, Resumir, Volume)
     - Sistema de Busca(Artisca, Genero, Musica, Playlist)
 
+---
+
 ## Livro Eng Software Moderna
 [Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
+
+---
 
 ## Histórias de Usuário
 
@@ -38,6 +57,26 @@
 - Como um administrador do sistema, eu gostaria de cadastrar os gêneros musicais disponíveis, para organizar as músicas no sistema.
 - Como um administrador do sistema, eu gostaria de editar ou excluir gêneros musicais, para manter a base de dados consistente.
 - Como um administrador do sistema, eu gostaria de visualizar e gerenciar os usuários cadastrados, para garantir a segurança e o bom funcionamento do sistema.
+
+---
+
+## Como Executar o Projeto
+
+```bash
+# 1. Clone o projeto
+git clone https://github.com/thalesnap/fabsoft-thales-2025-1-b.git
+cd fabsoft-thales-2025-1-b
+git clone https://github.com/thalesnap/fabsoft-thales-2025-1-b.git
+cd fabsoft-thales-2025-1-b
+
+# 2. Rode o Backend
+cd projfabsoft
+./mvnw spring-boot:run
+
+# 3. Rode o Frontend (em outro terminal)
+cd projfabsoft-frontend
+npm install
+ng serve
 
 
 
