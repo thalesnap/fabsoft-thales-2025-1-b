@@ -66,8 +66,6 @@
 # 1. Clone o projeto
 git clone https://github.com/thalesnap/fabsoft-thales-2025-1-b.git
 cd fabsoft-thales-2025-1-b
-git clone https://github.com/thalesnap/fabsoft-thales-2025-1-b.git
-cd fabsoft-thales-2025-1-b
 
 # 2. Rode o Backend
 cd projfabsoft
